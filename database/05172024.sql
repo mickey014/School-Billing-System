@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 16, 2024 at 09:48 AM
+-- Generation Time: May 17, 2024 at 05:54 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -180,14 +180,14 @@ CREATE TABLE IF NOT EXISTS `tblstaff` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tblstaff`
 --
 
 INSERT INTO `tblstaff` (`id`, `name`, `username`, `password`) VALUES
-(4, 'Kirk Mendoza', 'kmendoza06', 'MTIzNDU='),
+(7, 'Kirk Mendoza', 'kmendoza06', 'a2lyazEyMzQ1'),
 (6, 'test test', 'test', 'dGVzdA==');
 
 -- --------------------------------------------------------
@@ -205,6 +205,8 @@ CREATE TABLE IF NOT EXISTS `tblstudent` (
   `address` text NOT NULL,
   `contact` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `age` int NOT NULL,
+  `sex` varchar(255) NOT NULL,
   `grade` varchar(50) NOT NULL,
   `section` varchar(50) NOT NULL,
   PRIMARY KEY (`lrn`)
@@ -214,10 +216,11 @@ CREATE TABLE IF NOT EXISTS `tblstudent` (
 -- Dumping data for table `tblstudent`
 --
 
-INSERT INTO `tblstudent` (`lrn`, `lname`, `fname`, `mname`, `address`, `contact`, `email`, `grade`, `section`) VALUES
-('1000001112', 'RESARE', 'JOEMEL', 'ETAC', 'SURIGAO CITY', '09071234567', 'jresare@gmail.com', 'GRADE 7', 'EARTH'),
-('1792347923', 'SENORIO', 'VJ', 'M', 'ASURIGAO CITY', 'ASDAS', 'ASDASDAS', 'GRADE 7', 'EARTH'),
-('189583459340', 'GO', 'MIELLE', 'NG', 'SURIGAO CITY', '091783495', 'gomielle@gmail.com', 'GRADE 7', 'EARTH');
+INSERT INTO `tblstudent` (`lrn`, `lname`, `fname`, `mname`, `address`, `contact`, `email`, `age`, `sex`, `grade`, `section`) VALUES
+('1000001112', 'RESARE', 'JOEMEL', 'ETAC', 'SURIGAO CITY', '09071234567', 'jresare@gmail.com', 17, 'Female', 'GRADE 7', 'EARTH'),
+('1792347923', 'SENORIO', 'VJ', 'M', 'ASURIGAO CITY', 'ASDAS', 'ASDASDAS', 16, 'Male', 'GRADE 7', 'EARTH'),
+('189583459340', 'GO', 'MIELLE', 'NG', 'SURIGAO CITY', '091783495', 'gomielle@gmail.com', 17, 'Male', 'GRADE 7', 'EARTH'),
+('5111897777', 'Doe', 'John', 'D', 'Blk 10 Lot 55', '09568897775', 'john_doe@gmail.com', 18, 'Male', 'GRADE 7', 'MERCURY');
 
 -- --------------------------------------------------------
 
