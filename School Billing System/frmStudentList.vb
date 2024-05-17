@@ -5,10 +5,10 @@ Public Class frmStudentList
             DataGridView1.Rows.Clear()
             DataGridView1.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("select lrn, concat(lname, ', ' , fname, ' ' , mname) as fullname, address, contact, email, grade, section from tblstudent where concat(lname, ', ' , fname, ' ' , mname) like '%" & txtSearch.Text & "%'", cn)
+            cm = New MySqlCommand("select lrn, concat(lname, ', ' , fname, ' ' , mname) as fullname, address, contact, email, age, sex, grade, section from tblstudent where concat(lname, ', ' , fname, ' ' , mname) like '%" & txtSearch.Text & "%'", cn)
             dr = cm.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("lrn").ToString, dr.Item("fullname").ToString, dr.Item("address").ToString, dr.Item("contact").ToString, dr.Item("email").ToString, dr.Item("grade").ToString, dr.Item("section").ToString)
+                DataGridView1.Rows.Add(dr.Item("lrn").ToString, dr.Item("fullname").ToString, dr.Item("address").ToString, dr.Item("contact").ToString, dr.Item("email").ToString, dr.Item("age").ToString, dr.Item("sex").ToString, dr.Item("grade").ToString, dr.Item("section").ToString)
             End While
             dr.Close()
             cn.Close()
@@ -39,6 +39,8 @@ Public Class frmStudentList
                         .txtContact.Text = dr.Item("contact").ToString
                         .txtAddress.Text = dr.Item("address").ToString
                         .txtEmail.Text = dr.Item("email").ToString
+                        .txtAge.Text = dr.Item("age")
+                        .cboSex.Text = dr.Item("sex")
                         _grade = dr.Item("grade").ToString
                         _section = dr.Item("section").ToString
                     End If

@@ -24,7 +24,7 @@ Public Class frmStudent
             If IS_EMPTY(cboSection) = True Then Return
             If MsgBox("Save this record?", vbYesNo + vbQuestion) = vbYes Then
                 cn.Open()
-                cm = New MySqlCommand("insert into tblstudent(lrn, lname, fname, mname, address, contact, email, grade, section)values(@lrn, @lname, @fname, @mname, @address, @contact, @email, @grade, @section)", cn)
+                cm = New MySqlCommand("insert into tblstudent(lrn, lname, fname, mname, address, contact, email, age, sex, grade, section)values(@lrn, @lname, @fname, @mname, @address, @contact, @email, @age, @sex, @grade, @section)", cn)
                 With cm
                     .Parameters.AddWithValue("lrn", txtLRN.Text)
                     .Parameters.AddWithValue("lname", txtLname.Text)
@@ -33,6 +33,8 @@ Public Class frmStudent
                     .Parameters.AddWithValue("address", txtAddress.Text)
                     .Parameters.AddWithValue("contact", txtContact.Text)
                     .Parameters.AddWithValue("email", txtEmail.Text)
+                    .Parameters.AddWithValue("age", txtAge.Text)
+                    .Parameters.AddWithValue("sex", cboSex.Text)
                     .Parameters.AddWithValue("grade", cboGrade.Text)
                     .Parameters.AddWithValue("section", cboSection.Text)
                     .ExecuteNonQuery()
@@ -52,12 +54,14 @@ Public Class frmStudent
         txtAddress.Clear()
         txtContact.Clear()
         txtEmail.Clear()
+        txtAge.Clear()
         txtFname.Clear()
         txtLname.Clear()
         txtLRN.Clear()
         txtMI.Clear()
         cboSection.Text = ""
         cboGrade.Text = ""
+        cboSex.Text = ""
         btnSave.Enabled = True
         btnUpdate.Enabled = False
         txtLRN.Enabled = True
@@ -92,11 +96,13 @@ Public Class frmStudent
             If IS_EMPTY(txtAddress) = True Then Return
             If IS_EMPTY(txtContact) = True Then Return
             If IS_EMPTY(txtEmail) = True Then Return
+            If IS_EMPTY(txtAge) = True Then Return
+            If IS_EMPTY(cboSex) = True Then Return
             If IS_EMPTY(cboGrade) = True Then Return
             If IS_EMPTY(cboSection) = True Then Return
             If MsgBox("Update this record?", vbYesNo + vbQuestion) = vbYes Then
                 cn.Open()
-                cm = New MySqlCommand("update tblstudent set lname=@lname, fname=@fname, mname=@mname, address=@address, contact=@contact, email=@email, grade=@grade, section=@section where lrn = @lrn", cn)
+                cm = New MySqlCommand("update tblstudent set lname=@lname, fname=@fname, mname=@mname, address=@address, contact=@contact, email=@email, age=@age, sex=@sex,grade=@grade, section=@section where lrn = @lrn", cn)
                 With cm
                     .Parameters.AddWithValue("lname", txtLname.Text)
                     .Parameters.AddWithValue("fname", txtFname.Text)
@@ -104,6 +110,8 @@ Public Class frmStudent
                     .Parameters.AddWithValue("address", txtAddress.Text)
                     .Parameters.AddWithValue("contact", txtContact.Text)
                     .Parameters.AddWithValue("email", txtEmail.Text)
+                    .Parameters.AddWithValue("age", txtAge.Text)
+                    .Parameters.AddWithValue("sex", cboSex.Text)
                     .Parameters.AddWithValue("grade", cboGrade.Text)
                     .Parameters.AddWithValue("section", cboSection.Text)
                     .Parameters.AddWithValue("lrn", txtLRN.Text)

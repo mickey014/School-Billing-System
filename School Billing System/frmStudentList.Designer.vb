@@ -40,6 +40,8 @@ Partial Class frmStudentList
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AGE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colView = New System.Windows.Forms.DataGridViewImageColumn()
@@ -213,7 +215,7 @@ Partial Class frmStudentList
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 35
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.colView, Me.colDelete})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.AGE, Me.Column8, Me.Column6, Me.Column7, Me.colView, Me.colDelete})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -271,6 +273,20 @@ Partial Class frmStudentList
         Me.Column5.MinimumWidth = 8
         Me.Column5.Name = "Column5"
         Me.Column5.Width = 96
+        '
+        'AGE
+        '
+        Me.AGE.HeaderText = "AGE"
+        Me.AGE.MinimumWidth = 8
+        Me.AGE.Name = "AGE"
+        Me.AGE.Width = 150
+        '
+        'Column8
+        '
+        Me.Column8.HeaderText = "SEX"
+        Me.Column8.MinimumWidth = 8
+        Me.Column8.Name = "Column8"
+        Me.Column8.Width = 150
         '
         'Column6
         '
@@ -337,15 +353,17 @@ Partial Class frmStudentList
     Friend WithEvents Button1 As Button
     Friend WithEvents btnSearch As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents LinkLabel2 As LinkLabel
+    Friend WithEvents refreshBtn As Button
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents AGE As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents colView As DataGridViewImageColumn
     Friend WithEvents colDelete As DataGridViewImageColumn
-    Friend WithEvents LinkLabel2 As LinkLabel
-    Friend WithEvents refreshBtn As Button
 End Class
