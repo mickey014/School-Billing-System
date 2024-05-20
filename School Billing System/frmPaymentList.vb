@@ -24,7 +24,7 @@ Public Class frmPaymentList
             cm = New MySql.Data.MySqlClient.MySqlCommand("select p.*, concat(s.lname, ', ' , s.fname, ' ' , s.mname) as fullname from tblpayment as p inner join tblstudent as s on s.lrn = p.lrn where  ay like '" & frmDashboard.lblAY.Text & "' and concat(s.lname, ', ' , s.fname, ' ' , s.mname) like '" & txtSearch.Text & "%'", cn)
             dr = cm.ExecuteReader
             While dr.Read
-                DataGridView1.Rows.Add(dr.Item("id").ToString, dr.Item("refno").ToString, dr.Item("lrn").ToString, dr.Item("fullname").ToString, dr.Item("ay").ToString, dr.Item("period").ToString, Format(CDbl(dr.Item("payment").ToString), "#,##0.00"), CDate(dr.Item("pdate").ToString).ToShortDateString)
+                DataGridView1.Rows.Add(dr.Item("id").ToString, dr.Item("refno").ToString, dr.Item("lrn").ToString, dr.Item("fullname").ToString, dr.Item("ay").ToString, dr.Item("period").ToString, dr.Item("particular").ToString, Format(CDbl(dr.Item("payment").ToString), "#,##0.00"), CDate(dr.Item("pdate").ToString).ToShortDateString)
             End While
             dr.Close()
             cn.Close()
@@ -59,7 +59,7 @@ Public Class frmPaymentList
 
         Try
             cn.Open()
-            cm = New MySql.Data.MySqlClient.MySqlCommand("select p.*, concat(s.lname, ', ' , s.fname, ' ' , s.mname) as fullname from tblpayment as p inner join tblstudent as s on s.lrn = p.lrn where  ay like '" & frmDashboard.lblAY.Text & "' and p.lrn like '" & txtSearch.Text & "%'", cn)
+            cm = New MySql.Data.MySqlClient.MySqlCommand("select p.*, concat(s.lname, ', ' , s.fname, ' ' , s.mname) as fullname from tblpayment as p inner join tblstudent as s on s.lrn = p.lrn where p.lrn like '" & txtSearch.Text & "%'", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 DataGridView1.Rows.Add(dr.Item("id").ToString, dr.Item("refno").ToString, dr.Item("lrn").ToString, dr.Item("fullname").ToString, dr.Item("ay").ToString, dr.Item("period").ToString, dr.Item("particular").ToString, Format(CDbl(dr.Item("payment").ToString), "#,##0.00"), CDate(dr.Item("pdate").ToString).ToShortDateString)

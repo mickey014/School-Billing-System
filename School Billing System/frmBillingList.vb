@@ -73,7 +73,7 @@
 
             cn.Open()
             '  cm = New MySql.Data.MySqlClient.MySqlCommand("select * from vwtuition where (ay like '" & frmDashboard.lblAY.Text & "' or ay like '') and fullname like '%" & txtSearch.Text & "%'", cn)
-            cm = New MySql.Data.MySqlClient.MySqlCommand("SELECT * FROM vwtuition AS T INNER JOIN VWBALANCE AS B ON T.LRN = B.LRN AND T.AY = B.AY where (B.ay like '" & frmDashboard.lblAY.Text & "' or B.ay like '') and B.LRN like '%" & txtSearch.Text & "%'", cn)
+            cm = New MySql.Data.MySqlClient.MySqlCommand("SELECT *, IF(B.balance > 0) FROM vwtuition AS T INNER JOIN VWBALANCE AS B ON T.LRN = B.LRN AND T.AY = B.AY where (B.ay like '" & frmDashboard.lblAY.Text & "' or B.ay like '') and B.LRN like '%" & txtSearch.Text & "%'", cn)
             'SELECT * FROM vwtuition AS T INNER JOIN VWBALANCE AS B ON T.LRN = B.LRN AND T.AY = B.AY
             dr = cm.ExecuteReader
             While dr.Read

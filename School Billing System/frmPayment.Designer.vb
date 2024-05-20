@@ -40,12 +40,18 @@ Partial Class frmPayment
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtStudent = New System.Windows.Forms.TextBox()
+        Me.cboParticular = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtboxOther = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.txtboxOther)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.cboParticular)
         Me.Panel1.Controls.Add(Me.cboPeriod)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.btnSave)
@@ -65,7 +71,7 @@ Partial Class frmPayment
         Me.Panel1.Controls.Add(Me.txtStudent)
         Me.Panel1.Location = New System.Drawing.Point(293, 71)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(432, 455)
+        Me.Panel1.Size = New System.Drawing.Size(432, 557)
         Me.Panel1.TabIndex = 6
         '
         'cboPeriod
@@ -96,7 +102,7 @@ Partial Class frmPayment
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(18, 386)
+        Me.btnSave.Location = New System.Drawing.Point(20, 498)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(71, 27)
@@ -131,7 +137,7 @@ Partial Class frmPayment
         Me.txtAmount.BackColor = System.Drawing.Color.White
         Me.txtAmount.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAmount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtAmount.Location = New System.Drawing.Point(17, 337)
+        Me.txtAmount.Location = New System.Drawing.Point(19, 449)
         Me.txtAmount.Name = "txtAmount"
         Me.txtAmount.Size = New System.Drawing.Size(397, 35)
         Me.txtAmount.TabIndex = 85
@@ -141,7 +147,7 @@ Partial Class frmPayment
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(14, 316)
+        Me.Label5.Location = New System.Drawing.Point(16, 428)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(78, 24)
         Me.Label5.TabIndex = 84
@@ -178,7 +184,7 @@ Partial Class frmPayment
         Me.LinkLabel2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
         Me.LinkLabel2.LinkColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(111, Byte), Integer), CType(CType(211, Byte), Integer))
-        Me.LinkLabel2.Location = New System.Drawing.Point(95, 392)
+        Me.LinkLabel2.Location = New System.Drawing.Point(97, 504)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(104, 24)
         Me.LinkLabel2.TabIndex = 77
@@ -267,6 +273,35 @@ Partial Class frmPayment
         Me.txtStudent.Size = New System.Drawing.Size(397, 35)
         Me.txtStudent.TabIndex = 3
         '
+        'cboParticular
+        '
+        Me.cboParticular.FormattingEnabled = True
+        Me.cboParticular.Items.AddRange(New Object() {"tuition", "any", "other"})
+        Me.cboParticular.Location = New System.Drawing.Point(19, 335)
+        Me.cboParticular.Name = "cboParticular"
+        Me.cboParticular.Size = New System.Drawing.Size(395, 32)
+        Me.cboParticular.TabIndex = 91
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(15, 308)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(91, 24)
+        Me.Label3.TabIndex = 90
+        Me.Label3.Text = "Particular"
+        '
+        'txtboxOther
+        '
+        Me.txtboxOther.FormattingEnabled = True
+        Me.txtboxOther.Items.AddRange(New Object() {"tuition", "any", "other"})
+        Me.txtboxOther.Location = New System.Drawing.Point(19, 382)
+        Me.txtboxOther.Name = "txtboxOther"
+        Me.txtboxOther.Size = New System.Drawing.Size(395, 32)
+        Me.txtboxOther.TabIndex = 92
+        '
         'frmPayment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 24.0!)
@@ -302,4 +337,7 @@ Partial Class frmPayment
     Friend WithEvents btnSave As Button
     Friend WithEvents cboPeriod As ComboBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cboParticular As ComboBox
+    Friend WithEvents txtboxOther As ComboBox
 End Class

@@ -2,8 +2,9 @@
 Public Class frmPayment
     Public _lrn As String
     Dim rnd As New Random
+    'Dim particular As String
     Private Sub frmPayment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        txtboxOther.Enabled = False
     End Sub
 
     Private Sub frmPayment_Resize(sender As Object, e As EventArgs) Handles Me.Resize
@@ -78,30 +79,55 @@ Public Class frmPayment
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
-            If CDbl(txtAmount.Text) > CDbl(txtBalance.Text) Then
+            If CDbl(txtAmount.Text) <> CDbl(txtBalance.Text) Then
                 MsgBox("Please pay correct amount!", vbExclamation)
                 Return
             End If
             If IS_EMPTY(txtReference) = True Then Return
             If IS_EMPTY(txtStudent) = True Then Return
             If IS_EMPTY(cboPeriod) = True Then Return
+            If IS_EMPTY(cboParticular) = True Then Return
             If IS_EMPTY(txtAmount) = True Then Return
-            If MsgBox("Do you want to save this payment?", vbYesNo + vbQuestion) = vbYes Then
-                cn.Open()
-                cm = New MySqlCommand("insert into tblpayment (refno, lrn, ay, payment, pdate, period)values(@refno, @lrn, @ay, @payment,@pdate,@period)", cn)
-                cm.Parameters.AddWithValue("@refno", txtReference.Text)
-                cm.Parameters.AddWithValue("@lrn", _lrn)
-                cm.Parameters.AddWithValue("@ay", txtAY.Text)
-                cm.Parameters.AddWithValue("@payment", CDbl(txtAmount.Text))
-                cm.Parameters.AddWithValue("@pdate", Now.ToString("yyyy-MM-dd"))
-                cm.Parameters.AddWithValue("@period", cboPeriod.Text)
-                cm.ExecuteNonQuery()
-                cn.Close()
-                MsgBox("Payment has been succssfully saved!", vbInformation)
-                Clear()
-                frmPaymentList.LoadRecords()
-                Dashboard()
+
+            If cboParticular.Text = "other" Then
+
+                If MsgBox("Do you want to save this payment?", vbYesNo + vbQuestion) = vbYes Then
+                    cn.Open()
+                    cm = New MySqlCommand("insert into tblpayment (refno, lrn, ay, payment, pdate, period,particular)values(@refno, @lrn, @ay, @payment,@pdate,@period,@particular)", cn)
+                    cm.Parameters.AddWithValue("@refno", txtReference.Text)
+                    cm.Parameters.AddWithValue("@lrn", _lrn)
+                    cm.Parameters.AddWithValue("@ay", txtAY.Text)
+                    cm.Parameters.AddWithValue("@payment", CDbl(txtAmount.Text))
+                    cm.Parameters.AddWithValue("@pdate", Now.ToString("yyyy-MM-dd"))
+                    cm.Parameters.AddWithValue("@period", cboPeriod.Text)
+                    cm.Parameters.AddWithValue("@particular", txtboxOther.Text)
+                    cm.ExecuteNonQuery()
+                    cn.Close()
+                    MsgBox("Payment has been succssfully saved!", vbInformation)
+                    Clear()
+                    frmPaymentList.LoadRecords()
+                    Dashboard()
+                End If
+            Else
+                If MsgBox("Do you want to save this payment?", vbYesNo + vbQuestion) = vbYes Then
+                    cn.Open()
+                    cm = New MySqlCommand("insert into tblpayment (refno, lrn, ay, payment, pdate, period,particular)values(@refno, @lrn, @ay, @payment,@pdate,@period,@particular)", cn)
+                    cm.Parameters.AddWithValue("@refno", txtReference.Text)
+                    cm.Parameters.AddWithValue("@lrn", _lrn)
+                    cm.Parameters.AddWithValue("@ay", txtAY.Text)
+                    cm.Parameters.AddWithValue("@payment", CDbl(txtAmount.Text))
+                    cm.Parameters.AddWithValue("@pdate", Now.ToString("yyyy-MM-dd"))
+                    cm.Parameters.AddWithValue("@period", cboPeriod.Text)
+                    cm.Parameters.AddWithValue("@particular", cboParticular.Text)
+                    cm.ExecuteNonQuery()
+                    cn.Close()
+                    MsgBox("Payment has been succssfully saved!", vbInformation)
+                    Clear()
+                    frmPaymentList.LoadRecords()
+                    Dashboard()
+                End If
             End If
+
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)
@@ -110,11 +136,21 @@ Public Class frmPayment
     Sub Clear()
         GenerateRefNo()
         cboPeriod.Text = ""
+        cboParticular.Text = ""
         txtAmount.Clear()
+        txtboxOther.Text = ""
         LoadRecords()
     End Sub
 
     Private Sub ComboBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboPeriod.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub cboParticular_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboParticular.SelectedIndexChanged
+        If cboParticular.Text = "other" Then
+            txtboxOther.Enabled = True
+        Else
+            txtboxOther.Enabled = False
+        End If
     End Sub
 End Class
