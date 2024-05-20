@@ -29,6 +29,7 @@ Public Class frmLogin
                 If txtUsername.Text = str_username And txtPassword.Text = decrypt_data(str_pass) Then
                     cn.Close()
                     MessageBox.Show("Welcome " + str_name + "!")
+                    frmMain.lblName.Text = "Hello " + str_name + "!"
                     Me.Hide()
                     frmMain.Show()
                     Clear()
@@ -93,5 +94,11 @@ Public Class frmLogin
     Private Sub forgotBtn_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles forgotBtn.LinkClicked
         Me.Hide()
         frmForgotPassword.Show()
+    End Sub
+
+    Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
+        If MsgBox("Are You Sure?", vbQuestion + vbYesNo) = vbYes Then
+            Me.Close()
+        End If
     End Sub
 End Class

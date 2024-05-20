@@ -28,6 +28,7 @@ Partial Class frmPaymentList
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.refreshBtn = New System.Windows.Forms.Button()
         Me.printBtn = New System.Windows.Forms.Button()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -36,17 +37,14 @@ Partial Class frmPaymentList
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.refreshBtn = New System.Windows.Forms.Button()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDelete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,6 +83,19 @@ Partial Class frmPaymentList
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1201, 68)
         Me.Panel2.TabIndex = 2
+        '
+        'refreshBtn
+        '
+        Me.refreshBtn.BackColor = System.Drawing.Color.DimGray
+        Me.refreshBtn.FlatAppearance.BorderSize = 0
+        Me.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.refreshBtn.ForeColor = System.Drawing.SystemColors.Control
+        Me.refreshBtn.Location = New System.Drawing.Point(453, 26)
+        Me.refreshBtn.Name = "refreshBtn"
+        Me.refreshBtn.Size = New System.Drawing.Size(107, 31)
+        Me.refreshBtn.TabIndex = 588
+        Me.refreshBtn.Text = "Refresh"
+        Me.refreshBtn.UseVisualStyleBackColor = False
         '
         'printBtn
         '
@@ -208,7 +219,7 @@ Partial Class frmPaymentList
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 35
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column9, Me.Column10, Me.Column1, Me.Column2, Me.Column6, Me.Column7, Me.Column4, Me.Column5, Me.Column3, Me.colDelete})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column9, Me.Column10, Me.Column1, Me.Column2, Me.Column6, Me.Column7, Me.Column5, Me.Column3})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -242,19 +253,6 @@ Partial Class frmPaymentList
         'PrintDocument1
         '
         '
-        'refreshBtn
-        '
-        Me.refreshBtn.BackColor = System.Drawing.Color.DimGray
-        Me.refreshBtn.FlatAppearance.BorderSize = 0
-        Me.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.refreshBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.refreshBtn.Location = New System.Drawing.Point(453, 26)
-        Me.refreshBtn.Name = "refreshBtn"
-        Me.refreshBtn.Size = New System.Drawing.Size(107, 31)
-        Me.refreshBtn.TabIndex = 588
-        Me.refreshBtn.Text = "Refresh"
-        Me.refreshBtn.UseVisualStyleBackColor = False
-        '
         'Column9
         '
         Me.Column9.HeaderText = "ID"
@@ -265,19 +263,17 @@ Partial Class frmPaymentList
         '
         'Column10
         '
-        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Column10.HeaderText = "REF #"
         Me.Column10.MinimumWidth = 8
         Me.Column10.Name = "Column10"
-        Me.Column10.Width = 89
         '
         'Column1
         '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Column1.HeaderText = "LRN"
         Me.Column1.MinimumWidth = 8
         Me.Column1.Name = "Column1"
-        Me.Column1.Width = 76
         '
         'Column2
         '
@@ -300,13 +296,6 @@ Partial Class frmPaymentList
         Me.Column7.MinimumWidth = 8
         Me.Column7.Name = "Column7"
         '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.HeaderText = "PARTICULAR"
-        Me.Column4.MinimumWidth = 8
-        Me.Column4.Name = "Column4"
-        '
         'Column5
         '
         Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -320,14 +309,6 @@ Partial Class frmPaymentList
         Me.Column3.HeaderText = "DATE"
         Me.Column3.MinimumWidth = 8
         Me.Column3.Name = "Column3"
-        '
-        'colDelete
-        '
-        Me.colDelete.HeaderText = ""
-        Me.colDelete.Image = CType(resources.GetObject("colDelete.Image"), System.Drawing.Image)
-        Me.colDelete.MinimumWidth = 8
-        Me.colDelete.Name = "colDelete"
-        Me.colDelete.Width = 30
         '
         'frmPaymentList
         '
@@ -368,8 +349,6 @@ Partial Class frmPaymentList
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents colDelete As DataGridViewImageColumn
 End Class

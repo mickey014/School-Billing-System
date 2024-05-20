@@ -85,15 +85,13 @@ Public Class frmPayment
             If IS_EMPTY(txtReference) = True Then Return
             If IS_EMPTY(txtStudent) = True Then Return
             If IS_EMPTY(cboPeriod) = True Then Return
-            If IS_EMPTY(txtParticular) = True Then Return
             If IS_EMPTY(txtAmount) = True Then Return
             If MsgBox("Do you want to save this payment?", vbYesNo + vbQuestion) = vbYes Then
                 cn.Open()
-                cm = New MySqlCommand("insert into tblpayment (refno, lrn, ay, particular, payment, pdate, period)values(@refno, @lrn, @ay, @particular, @payment,@pdate,@period)", cn)
+                cm = New MySqlCommand("insert into tblpayment (refno, lrn, ay, payment, pdate, period)values(@refno, @lrn, @ay, @payment,@pdate,@period)", cn)
                 cm.Parameters.AddWithValue("@refno", txtReference.Text)
                 cm.Parameters.AddWithValue("@lrn", _lrn)
                 cm.Parameters.AddWithValue("@ay", txtAY.Text)
-                cm.Parameters.AddWithValue("@particular", txtReference.Text)
                 cm.Parameters.AddWithValue("@payment", CDbl(txtAmount.Text))
                 cm.Parameters.AddWithValue("@pdate", Now.ToString("yyyy-MM-dd"))
                 cm.Parameters.AddWithValue("@period", cboPeriod.Text)
@@ -112,7 +110,6 @@ Public Class frmPayment
     Sub Clear()
         GenerateRefNo()
         cboPeriod.Text = ""
-        txtParticular.Clear()
         txtAmount.Clear()
         LoadRecords()
     End Sub

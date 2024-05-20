@@ -71,4 +71,10 @@ Public Class frmSignup
         txtCPassword.UseSystemPasswordChar = True
         txtName.Focus()
     End Sub
+
+    Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
+        If MsgBox("Are You Sure?", vbQuestion + vbYesNo) = vbYes Then
+            Me.Close()
+        End If
+    End Sub
 End Class

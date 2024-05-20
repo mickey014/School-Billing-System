@@ -61,6 +61,11 @@ Module Module1
             frmDashboard.lblBill.Text = cm.ExecuteScalar
             cn.Close()
 
+            cn.Open()
+            cm = New MySqlCommand("select count(id) from tblstaff", cn)
+            frmDashboard.lblUserAcc.Text = cm.ExecuteScalar
+            cn.Close()
+
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)

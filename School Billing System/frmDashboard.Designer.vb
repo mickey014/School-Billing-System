@@ -27,50 +27,27 @@ Partial Class frmDashboard
         Me.Label10 = New System.Windows.Forms.Label()
         Me.panel6 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblUserAcc = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.lblBill = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.lblAY = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Panel17 = New System.Windows.Forms.Panel()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.lblPayment = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.Panel18 = New System.Windows.Forms.Panel()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Panel19 = New System.Windows.Forms.Panel()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Panel20 = New System.Windows.Forms.Panel()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Panel21 = New System.Windows.Forms.Panel()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblStudent = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -89,15 +66,6 @@ Partial Class frmDashboard
         Me.Panel12.SuspendLayout()
         Me.Panel13.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel18.SuspendLayout()
-        Me.Panel19.SuspendLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel4.SuspendLayout()
-        Me.Panel10.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel20.SuspendLayout()
-        Me.Panel21.SuspendLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -120,7 +88,7 @@ Partial Class frmDashboard
         Me.Label10.ForeColor = System.Drawing.Color.Gray
         Me.Label10.Location = New System.Drawing.Point(65, 20)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(109, 25)
+        Me.Label10.Size = New System.Drawing.Size(166, 40)
         Me.Label10.TabIndex = 0
         Me.Label10.Text = "Dashboard"
         '
@@ -130,9 +98,6 @@ Partial Class frmDashboard
         Me.panel6.Controls.Add(Me.Panel11)
         Me.panel6.Controls.Add(Me.Panel16)
         Me.panel6.Controls.Add(Me.Panel12)
-        Me.panel6.Controls.Add(Me.Panel18)
-        Me.panel6.Controls.Add(Me.Panel4)
-        Me.panel6.Controls.Add(Me.Panel20)
         Me.panel6.Controls.Add(Me.Panel2)
         Me.panel6.Location = New System.Drawing.Point(55, 0)
         Me.panel6.Name = "panel6"
@@ -142,39 +107,26 @@ Partial Class frmDashboard
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.White
-        Me.Panel7.Controls.Add(Me.Label6)
-        Me.Panel7.Controls.Add(Me.Label9)
+        Me.Panel7.Controls.Add(Me.lblUserAcc)
         Me.Panel7.Controls.Add(Me.Label14)
         Me.Panel7.Controls.Add(Me.Panel15)
-        Me.Panel7.Location = New System.Drawing.Point(792, 115)
+        Me.Panel7.Location = New System.Drawing.Point(15, 115)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(241, 72)
         Me.Panel7.TabIndex = 13
         '
-        'Label6
+        'lblUserAcc
         '
-        Me.Label6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label6.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(76, 15)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.Label6.Size = New System.Drawing.Size(165, 42)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "0"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label9
-        '
-        Me.Label9.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label9.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(188, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(76, 57)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label9.Size = New System.Drawing.Size(165, 15)
-        Me.Label9.TabIndex = 7
-        Me.Label9.Text = "View User Account"
+        Me.lblUserAcc.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblUserAcc.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUserAcc.ForeColor = System.Drawing.Color.Black
+        Me.lblUserAcc.Location = New System.Drawing.Point(76, 15)
+        Me.lblUserAcc.Name = "lblUserAcc"
+        Me.lblUserAcc.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.lblUserAcc.Size = New System.Drawing.Size(165, 57)
+        Me.lblUserAcc.TabIndex = 8
+        Me.lblUserAcc.Text = "0"
+        Me.lblUserAcc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label14
         '
@@ -213,10 +165,9 @@ Partial Class frmDashboard
         '
         Me.Panel11.BackColor = System.Drawing.Color.White
         Me.Panel11.Controls.Add(Me.lblBill)
-        Me.Panel11.Controls.Add(Me.Label12)
         Me.Panel11.Controls.Add(Me.Label13)
         Me.Panel11.Controls.Add(Me.Panel14)
-        Me.Panel11.Location = New System.Drawing.Point(792, 22)
+        Me.Panel11.Location = New System.Drawing.Point(613, 22)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(241, 72)
         Me.Panel11.TabIndex = 9
@@ -229,22 +180,10 @@ Partial Class frmDashboard
         Me.lblBill.Location = New System.Drawing.Point(76, 15)
         Me.lblBill.Name = "lblBill"
         Me.lblBill.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.lblBill.Size = New System.Drawing.Size(165, 42)
+        Me.lblBill.Size = New System.Drawing.Size(165, 57)
         Me.lblBill.TabIndex = 8
         Me.lblBill.Text = "0"
         Me.lblBill.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label12
-        '
-        Me.Label12.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label12.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(188, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(76, 57)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label12.Size = New System.Drawing.Size(165, 15)
-        Me.Label12.TabIndex = 7
-        Me.Label12.Text = "View Billing"
         '
         'Label13
         '
@@ -283,10 +222,9 @@ Partial Class frmDashboard
         '
         Me.Panel16.BackColor = System.Drawing.Color.White
         Me.Panel16.Controls.Add(Me.lblAY)
-        Me.Panel16.Controls.Add(Me.Label16)
         Me.Panel16.Controls.Add(Me.Label17)
         Me.Panel16.Controls.Add(Me.Panel17)
-        Me.Panel16.Location = New System.Drawing.Point(532, 115)
+        Me.Panel16.Location = New System.Drawing.Point(316, 115)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(241, 72)
         Me.Panel16.TabIndex = 12
@@ -299,22 +237,10 @@ Partial Class frmDashboard
         Me.lblAY.Location = New System.Drawing.Point(76, 15)
         Me.lblAY.Name = "lblAY"
         Me.lblAY.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.lblAY.Size = New System.Drawing.Size(165, 42)
+        Me.lblAY.Size = New System.Drawing.Size(165, 57)
         Me.lblAY.TabIndex = 10
         Me.lblAY.Text = "0"
         Me.lblAY.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label16
-        '
-        Me.Label16.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label16.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(188, Byte), Integer))
-        Me.Label16.Location = New System.Drawing.Point(76, 57)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label16.Size = New System.Drawing.Size(165, 15)
-        Me.Label16.TabIndex = 7
-        Me.Label16.Text = "View Academic Year"
         '
         'Label17
         '
@@ -353,10 +279,9 @@ Partial Class frmDashboard
         '
         Me.Panel12.BackColor = System.Drawing.Color.White
         Me.Panel12.Controls.Add(Me.lblPayment)
-        Me.Panel12.Controls.Add(Me.Label7)
         Me.Panel12.Controls.Add(Me.Label8)
         Me.Panel12.Controls.Add(Me.Panel13)
-        Me.Panel12.Location = New System.Drawing.Point(532, 22)
+        Me.Panel12.Location = New System.Drawing.Point(316, 22)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(241, 72)
         Me.Panel12.TabIndex = 7
@@ -369,22 +294,10 @@ Partial Class frmDashboard
         Me.lblPayment.Location = New System.Drawing.Point(76, 15)
         Me.lblPayment.Name = "lblPayment"
         Me.lblPayment.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.lblPayment.Size = New System.Drawing.Size(165, 42)
+        Me.lblPayment.Size = New System.Drawing.Size(165, 57)
         Me.lblPayment.TabIndex = 9
         Me.lblPayment.Text = "0"
         Me.lblPayment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label7
-        '
-        Me.Label7.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label7.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(188, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(76, 57)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label7.Size = New System.Drawing.Size(165, 15)
-        Me.Label7.TabIndex = 7
-        Me.Label7.Text = "View Payment"
         '
         'Label8
         '
@@ -419,217 +332,10 @@ Partial Class frmDashboard
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
         '
-        'Panel18
-        '
-        Me.Panel18.BackColor = System.Drawing.Color.White
-        Me.Panel18.Controls.Add(Me.Label18)
-        Me.Panel18.Controls.Add(Me.Label19)
-        Me.Panel18.Controls.Add(Me.Label20)
-        Me.Panel18.Controls.Add(Me.Panel19)
-        Me.Panel18.Location = New System.Drawing.Point(272, 115)
-        Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(241, 72)
-        Me.Panel18.TabIndex = 11
-        '
-        'Label18
-        '
-        Me.Label18.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label18.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.Black
-        Me.Label18.Location = New System.Drawing.Point(76, 15)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.Label18.Size = New System.Drawing.Size(165, 42)
-        Me.Label18.TabIndex = 8
-        Me.Label18.Text = "0"
-        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label19
-        '
-        Me.Label19.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label19.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(188, Byte), Integer))
-        Me.Label19.Location = New System.Drawing.Point(76, 57)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label19.Size = New System.Drawing.Size(165, 15)
-        Me.Label19.TabIndex = 7
-        '
-        'Label20
-        '
-        Me.Label20.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label20.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.Gray
-        Me.Label20.Location = New System.Drawing.Point(76, 0)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label20.Size = New System.Drawing.Size(165, 15)
-        Me.Label20.TabIndex = 1
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel19
-        '
-        Me.Panel19.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(201, Byte), Integer))
-        Me.Panel19.Controls.Add(Me.PictureBox7)
-        Me.Panel19.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel19.Location = New System.Drawing.Point(0, 0)
-        Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(76, 72)
-        Me.Panel19.TabIndex = 0
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(18, 18)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 0
-        Me.PictureBox7.TabStop = False
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.White
-        Me.Panel4.Controls.Add(Me.Label3)
-        Me.Panel4.Controls.Add(Me.Label4)
-        Me.Panel4.Controls.Add(Me.Label5)
-        Me.Panel4.Controls.Add(Me.Panel10)
-        Me.Panel4.Location = New System.Drawing.Point(272, 22)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(241, 72)
-        Me.Panel4.TabIndex = 6
-        '
-        'Label3
-        '
-        Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(76, 15)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.Label3.Size = New System.Drawing.Size(165, 42)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "0"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label4
-        '
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label4.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(188, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(76, 57)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label4.Size = New System.Drawing.Size(165, 15)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "View Faculty"
-        '
-        'Label5
-        '
-        Me.Label5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Gray
-        Me.Label5.Location = New System.Drawing.Point(76, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label5.Size = New System.Drawing.Size(165, 15)
-        Me.Label5.TabIndex = 1
-        Me.Label5.Text = "FACULTY"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel10
-        '
-        Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(163, Byte), Integer), CType(CType(164, Byte), Integer))
-        Me.Panel10.Controls.Add(Me.PictureBox2)
-        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel10.Location = New System.Drawing.Point(0, 0)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(76, 72)
-        Me.Panel10.TabIndex = 0
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(18, 18)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 0
-        Me.PictureBox2.TabStop = False
-        '
-        'Panel20
-        '
-        Me.Panel20.BackColor = System.Drawing.Color.White
-        Me.Panel20.Controls.Add(Me.Label21)
-        Me.Panel20.Controls.Add(Me.Label22)
-        Me.Panel20.Controls.Add(Me.Label23)
-        Me.Panel20.Controls.Add(Me.Panel21)
-        Me.Panel20.Location = New System.Drawing.Point(15, 115)
-        Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(241, 72)
-        Me.Panel20.TabIndex = 10
-        '
-        'Label21
-        '
-        Me.Label21.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label21.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.Color.Black
-        Me.Label21.Location = New System.Drawing.Point(76, 15)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.Label21.Size = New System.Drawing.Size(165, 42)
-        Me.Label21.TabIndex = 8
-        Me.Label21.Text = "0"
-        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label22
-        '
-        Me.Label22.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label22.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(188, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(76, 57)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label22.Size = New System.Drawing.Size(165, 15)
-        Me.Label22.TabIndex = 7
-        '
-        'Label23
-        '
-        Me.Label23.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label23.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.Color.Gray
-        Me.Label23.Location = New System.Drawing.Point(76, 0)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label23.Size = New System.Drawing.Size(165, 15)
-        Me.Label23.TabIndex = 1
-        Me.Label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel21
-        '
-        Me.Panel21.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(134, Byte), Integer), CType(CType(222, Byte), Integer))
-        Me.Panel21.Controls.Add(Me.PictureBox8)
-        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel21.Location = New System.Drawing.Point(0, 0)
-        Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(76, 72)
-        Me.Panel21.TabIndex = 0
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
-        Me.PictureBox8.Location = New System.Drawing.Point(18, 18)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox8.TabIndex = 0
-        Me.PictureBox8.TabStop = False
-        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Controls.Add(Me.lblStudent)
-        Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Location = New System.Drawing.Point(15, 22)
@@ -645,22 +351,10 @@ Partial Class frmDashboard
         Me.lblStudent.Location = New System.Drawing.Point(76, 15)
         Me.lblStudent.Name = "lblStudent"
         Me.lblStudent.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.lblStudent.Size = New System.Drawing.Size(165, 42)
+        Me.lblStudent.Size = New System.Drawing.Size(165, 57)
         Me.lblStudent.TabIndex = 8
         Me.lblStudent.Text = "0"
         Me.lblStudent.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label2
-        '
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(188, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(76, 57)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Label2.Size = New System.Drawing.Size(165, 15)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "View Student"
         '
         'Label1
         '
@@ -707,7 +401,7 @@ Partial Class frmDashboard
         '
         'frmDashboard
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1100, 543)
         Me.ControlBox = False
@@ -717,7 +411,6 @@ Partial Class frmDashboard
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "frmDashboard"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.panel6.ResumeLayout(False)
@@ -733,15 +426,6 @@ Partial Class frmDashboard
         Me.Panel12.ResumeLayout(False)
         Me.Panel13.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel18.ResumeLayout(False)
-        Me.Panel19.ResumeLayout(False)
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel10.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel20.ResumeLayout(False)
-        Me.Panel21.ResumeLayout(False)
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -754,48 +438,25 @@ Partial Class frmDashboard
     Friend WithEvents Label10 As Label
     Friend WithEvents panel6 As Panel
     Friend WithEvents Panel7 As Panel
-    Public WithEvents Label6 As Label
-    Friend WithEvents Label9 As Label
+    Public WithEvents lblUserAcc As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Panel15 As Panel
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Panel11 As Panel
     Public WithEvents lblBill As Label
-    Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Panel14 As Panel
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents Panel16 As Panel
-    Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Panel17 As Panel
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents Panel12 As Panel
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Panel13 As Panel
     Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents Panel18 As Panel
-    Public WithEvents Label18 As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents Label20 As Label
-    Friend WithEvents Panel19 As Panel
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents Panel4 As Panel
-    Public WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Panel10 As Panel
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Panel20 As Panel
-    Public WithEvents Label21 As Label
-    Friend WithEvents Label22 As Label
-    Friend WithEvents Label23 As Label
-    Friend WithEvents Panel21 As Panel
-    Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents Panel2 As Panel
     Public WithEvents lblStudent As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents PictureBox1 As PictureBox
