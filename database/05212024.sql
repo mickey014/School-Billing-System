@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 17, 2024 at 05:54 AM
+-- Generation Time: May 21, 2024 at 11:25 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `tblbilling` (
   `fee` decimal(10,2) NOT NULL DEFAULT '0.00',
   `less` decimal(10,2) NOT NULL DEFAULT '0.00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tblbilling`
@@ -69,7 +69,13 @@ INSERT INTO `tblbilling` (`id`, `lrn`, `ay`, `details`, `fee`, `less`) VALUES
 (11, '189583459340', '2021-2022', 'PTA', '300.00', '0.00'),
 (12, '189583459340', '2021-2022', 'Registration', '500.00', '0.00'),
 (13, '189583459340', '2021-2022', 'VOUCHER', '0.00', '3000.00'),
-(14, '1000001112', '2021-2022', 'Tuition', '5000.00', '0.00');
+(14, '1000001112', '2021-2022', 'Tuition', '5000.00', '0.00'),
+(15, '11451511', '2021-2022', 'Tuition', '5000.00', '0.00'),
+(16, '11451511', '2021-2022', 'School ID', '350.00', '0.00'),
+(17, '11451511', '2021-2022', 'PTA', '300.00', '0.00'),
+(18, '11451511', '2021-2022', 'VOUCHER', '0.00', '3000.00'),
+(19, '11451511', '2021-2022', 'Registration', '500.00', '0.00'),
+(20, '155454', '2021-2022', 'Tuition', '5000.00', '0.00');
 
 -- --------------------------------------------------------
 
@@ -108,21 +114,18 @@ CREATE TABLE IF NOT EXISTS `tblpayment` (
   `lrn` varchar(50) NOT NULL,
   `ay` varchar(50) NOT NULL,
   `period` varchar(50) NOT NULL,
-  `particular` varchar(100) NOT NULL,
+  `particular` varchar(255) NOT NULL,
   `payment` decimal(10,2) NOT NULL,
   `pdate` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tblpayment`
 --
 
 INSERT INTO `tblpayment` (`id`, `refno`, `lrn`, `ay`, `period`, `particular`, `payment`, `pdate`) VALUES
-(1, '6434577', '189583459340', '2021-2022', '', '6434577', '500.00', '2021-11-05'),
-(2, '8065734', '1000001112', '2021-2022', '', '8065734', '1000.00', '2021-11-05'),
-(3, '5511209', '1000001112', '2021-2022', '', '5511209', '1000.00', '2021-11-06'),
-(4, '4360415', '1000001112', '2021-2022', 'FIRST GRADING', '4360415', '1000.00', '2021-11-06');
+(11, '2507017', '11451511', '2021-2022', 'SECOND GRADING', 'Any', '3150.00', '2024-05-20');
 
 -- --------------------------------------------------------
 
@@ -201,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `tblstudent` (
   `lrn` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `fname` varchar(50) NOT NULL,
-  `mname` varchar(50) NOT NULL,
+  `mname` varchar(255) NOT NULL,
   `address` text NOT NULL,
   `contact` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -217,10 +220,8 @@ CREATE TABLE IF NOT EXISTS `tblstudent` (
 --
 
 INSERT INTO `tblstudent` (`lrn`, `lname`, `fname`, `mname`, `address`, `contact`, `email`, `age`, `sex`, `grade`, `section`) VALUES
-('1000001112', 'RESARE', 'JOEMEL', 'ETAC', 'SURIGAO CITY', '09071234567', 'jresare@gmail.com', 17, 'Female', 'GRADE 7', 'EARTH'),
-('1792347923', 'SENORIO', 'VJ', 'M', 'ASURIGAO CITY', 'ASDAS', 'ASDASDAS', 16, 'Male', 'GRADE 7', 'EARTH'),
-('189583459340', 'GO', 'MIELLE', 'NG', 'SURIGAO CITY', '091783495', 'gomielle@gmail.com', 17, 'Male', 'GRADE 7', 'EARTH'),
-('5111897777', 'Doe', 'John', 'D', 'Blk 10 Lot 55', '09568897775', 'john_doe@gmail.com', 18, 'Male', 'GRADE 7', 'MERCURY');
+('11451511', 'Johnson', 'Jack', 'L', 'blk 55 lot 105', '093503146908', 'jack_jack@gmail.com', 25, 'Male', 'GRADE 7', 'MERCURY'),
+('155454', 'Doe', 'John', 'D', 'test', '12321321', 'Test@test.com', 16, 'Male', 'GRADE 7', 'EARTH');
 
 -- --------------------------------------------------------
 
@@ -231,7 +232,7 @@ INSERT INTO `tblstudent` (`lrn`, `lname`, `fname`, `mname`, `address`, `contact`
 DROP VIEW IF EXISTS `vwbalance`;
 CREATE TABLE IF NOT EXISTS `vwbalance` (
 `lrn` varchar(50)
-,`fullname` varchar(153)
+,`fullname` varchar(358)
 ,`total` decimal(33,2)
 ,`payment` decimal(32,2)
 ,`balance` decimal(34,2)
@@ -247,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `vwbalance` (
 DROP VIEW IF EXISTS `vwstudent`;
 CREATE TABLE IF NOT EXISTS `vwstudent` (
 `lrn` varchar(50)
-,`fullname` varchar(153)
+,`fullname` varchar(358)
 ,`address` text
 ,`contact` varchar(50)
 ,`email` varchar(50)
@@ -264,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `vwstudent` (
 DROP VIEW IF EXISTS `vwtuition`;
 CREATE TABLE IF NOT EXISTS `vwtuition` (
 `lrn` varchar(50)
-,`fullname` varchar(153)
+,`fullname` varchar(358)
 ,`gradesection` varchar(103)
 ,`fee` decimal(32,2)
 ,`less` decimal(32,2)
